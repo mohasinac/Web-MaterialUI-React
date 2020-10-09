@@ -5,7 +5,7 @@ import Button from '@material-ui/core/Button'
 import CheckBox from '@material-ui/core/Checkbox'
 import FormControlLabel from '@material-ui/core/FormControlLabel'
 import FormControl from '@material-ui/core/FormControl'
-
+import TextField from '@material-ui/core/TextField'
 import ButtonGroup from '@material-ui/core/ButtonGroup'
 import SaveIcon from '@material-ui/icons/Save'
 import DeleteIcon from '@material-ui/icons/Delete'
@@ -39,6 +39,13 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <TextField 
+          variant="standard"
+          color="secondary"
+          type="text"
+          label="The text field"
+          placeholder="test string"
+         />
         <CheckBoxComponent/>
         <ButtonGroup>
           <Button startIcon={<SaveIcon/>} endIcon={<SaveIcon/>} variant="contained" color="primary" size="large" onClick={()=>{alert("hello")}} >
