@@ -11,7 +11,18 @@ import DeleteIcon from '@material-ui/icons/Delete'
 import VisibilityIcon from '@material-ui/icons/Visibility';
 import VisibilityOffIcon from '@material-ui/icons/VisibilityOff';
 
-import {makeStyles} from '@material-ui/core/styles'
+import {makeStyles , ThemeProvider ,createMuiTheme} from '@material-ui/core/styles'
+import { green, orange } from '@material-ui/core/colors'
+const theme = createMuiTheme({
+  palette:{
+    primary :{
+      main : orange[500]
+    },
+    secondary :{
+      main : green[500]
+    }
+  }
+})
 
 const useStyles = makeStyles(
   {
@@ -57,29 +68,32 @@ function CheckBoxComponent(){
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <ButtonStyled/>
-        <TextField 
-          variant="standard"
-          color="secondary"
-          type="text"
-          label="The text field"
-          placeholder="test string"
-         />
-        <CheckBoxComponent/>
-        <ButtonGroup>
-          <Button startIcon={<SaveIcon/>} endIcon={<SaveIcon/>} variant="contained" color="primary" size="large" onClick={()=>{alert("hello")}} >
-            This is a Button
-          </Button>
-          <Button variant="contained" startIcon={<DeleteIcon/>} endIcon={<DeleteIcon/>} color="secondary" size="large" onClick={()=>{alert("worl")}} >
-            This is another Button
-          </Button>
-        </ButtonGroup>
-        
-        <img src={logo} className="App-logo" alt="logo" />
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+          <div className="App">
+            <header className="App-header">
+              <ButtonStyled/>
+              <TextField 
+                variant="standard"
+                color="secondary"
+                type="text"
+                label="The text field"
+                placeholder="test string"
+              />
+              <CheckBoxComponent/>
+              <ButtonGroup>
+                <Button startIcon={<SaveIcon/>} endIcon={<SaveIcon/>} variant="contained" color="primary" size="large" onClick={()=>{alert("hello")}} >
+                  This is a Button
+                </Button>
+                <Button variant="contained" startIcon={<DeleteIcon/>} endIcon={<DeleteIcon/>} color="secondary" size="large" onClick={()=>{alert("worl")}} >
+                  This is another Button
+                </Button>
+              </ButtonGroup>
+              
+              <img src={logo} className="App-logo" alt="logo" />
+            </header>
+          </div>
+    </ThemeProvider>
+    
   );
 }
 
