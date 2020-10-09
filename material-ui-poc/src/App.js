@@ -16,6 +16,10 @@ import { green, orange } from '@material-ui/core/colors'
 import 'fontsource-roboto'
 
 import Typography from '@material-ui/core/Typography'
+import Container from '@material-ui/core/Container'
+import Paper from '@material-ui/core/Paper'
+import Grid from '@material-ui/core/Grid'
+
 
 const theme = createMuiTheme({
   palette:{
@@ -73,12 +77,39 @@ function CheckBoxComponent(){
 function App() {
   return (
     <ThemeProvider theme={theme}>
+      <Container maxWidth="xs">
           <div className="App">
             <header className="App-header">
-              <Typography variant="h2" component="h1">
-                Welcome to MAC
-              </Typography>
-              <ButtonStyled/>
+              
+                <Typography variant="h2" component="h1">
+                  Welcome to MAC
+                </Typography>
+                <ButtonStyled/>
+              
+              <Grid container spacing={4} justify='center' alignItems='center' >
+                <Grid item xs={3} sm={12} >
+                  <Paper style={{
+                    height:75,
+                    width:'100%'
+                  }}>
+                  </Paper>
+                </Grid>
+                <Grid item xs={3} sm={12}>
+                  <Paper style={{
+                    height:75,
+                    width: '100%'
+                  }}>
+                  </Paper>
+                </Grid>
+                <Grid item xs={3} sm={12}>
+                  <Paper style={{
+                    height:75,
+                    width:'100%'
+                  }}>
+                  </Paper>
+                </Grid>
+              </Grid>
+              
               <TextField 
                 variant="standard"
                 color="secondary"
@@ -99,6 +130,7 @@ function App() {
               <img src={logo} className="App-logo" alt="logo" />
             </header>
           </div>
+        </Container>
     </ThemeProvider>
     
   );
